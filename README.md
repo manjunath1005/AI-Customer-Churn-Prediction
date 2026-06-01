@@ -1,4 +1,4 @@
-# 📉 AI-Powered Customer Churn Prediction Platform
+# 📉 AI-Powered Customer Churn Prediction
 
 ## Overview
 
@@ -163,7 +163,7 @@ The ANN with 2 Hidden Layers achieved the best overall performance and was selec
 ## Project Structure
 
 ```text
-AI-Customer-Churn-Prediction-Platform/
+AI-Customer-Churn-Prediction/
 │
 ├── app.py
 ├── churn_ann_model.keras
