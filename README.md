@@ -2,7 +2,7 @@
 
 ## Overview
 
-The AI-Powered Customer Churn Prediction Platform is a Machine Learning and Deep Learning project designed to predict whether a telecom customer is likely to leave a service provider. The application uses an Artificial Neural Network (ANN) trained on the Telco Customer Churn dataset and provides real-time churn risk predictions through an interactive Streamlit dashboard.
+The AI-Powered Customer Churn Prediction is a Machine Learning and Deep Learning project designed to predict whether a telecom customer is likely to leave a service provider. The application uses an Artificial Neural Network (ANN) trained on the Telco Customer Churn dataset and provides real-time churn risk predictions through an interactive Streamlit dashboard.
 
 The platform helps telecom companies identify high-risk customers and take proactive retention measures to reduce customer loss and improve revenue.
 
