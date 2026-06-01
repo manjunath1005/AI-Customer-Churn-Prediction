@@ -15,8 +15,37 @@ st.set_page_config(
 # -----------------------------
 # LOAD MODEL
 # -----------------------------
-model = tf.keras.models.load_model("churn_ann_model.keras")
-scaler = joblib.load("scaler.pkl")
+def _build_churn_ann(input_dim=30):
+    return tf.keras.Sequential(
+        [
+            tf.keras.layers.Input(shape=(input_dim,)),
+            tf.keras.layers.Dense(64, activation="relu"),
+            tf.keras.layers.Dense(32, activation="relu"),
+            tf.keras.layers.Dense(1, activation="sigmoid"),
+        ]
+    )
+
+
+@st.cache_resource
+def load_churn_model():
+    keras_path = "churn_ann_model.keras"
+    weights_path = "churn_ann_model.weights.h5"
+
+    try:
+        return tf.keras.models.load_model(keras_path)
+    except (TypeError, ValueError):
+        model = _build_churn_ann()
+        model.load_weights(weights_path)
+        return model
+
+
+@st.cache_resource
+def load_scaler():
+    return joblib.load("scaler.pkl")
+
+
+model = load_churn_model()
+scaler = load_scaler()
 
 # -----------------------------
 # LOAD DATASET FOR COLUMNS
